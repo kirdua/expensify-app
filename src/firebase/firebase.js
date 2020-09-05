@@ -12,7 +12,8 @@ const firebaseConfig = {
   };
 
   firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+  
+  if (process.env.NODE_ENV != 'test') firebase.analytics();
 
   const database = firebase.database();
 
